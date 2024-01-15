@@ -1,4 +1,4 @@
-export default function Home({ children }) {
+export default function Home({}) {
 	return (
 		<main className="">
 			<div className="flex justify-center text-3xl mt-40 tracking-widest">
