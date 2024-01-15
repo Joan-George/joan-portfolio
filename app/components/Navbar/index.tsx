@@ -7,15 +7,15 @@ const navItems = [
 
 const Navbar = () => {
 	return (
-		<>
-			<ul className="flex-col gap-2">
+		<div className="p-4 top-0 sticky bg-white">
+			<div className="flex gap-2 flex-row-reverse">
 				{navItems.map((nav) => (
-					<li key={nav.path}>
+					<span key={nav.path} className="rounded p-2 text-[#a5d6a7]">
 						<Link href={nav.path}>{nav.name}</Link>
-					</li>
+					</span>
 				))}
-			</ul>
-		</>
+			</div>
+		</div>
 	);
 };
 
