@@ -4,7 +4,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import "./styles.module.css";
 
-const variants = {
+const variants: any = {
 	in: {
 		scale: 0.8,
 		y: 100,
