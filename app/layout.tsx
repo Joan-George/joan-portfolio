@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Roboto_Slab } from "next/font/google";
 import Navbar from "./components/Navbar";
+import TransitionLayout from "./components/TransitionLayout";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -17,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<html lang="en">
 			<body className={`${robotoSlab.className} bg-green-100 h-screen`}>
 				<Navbar />
-				{children}
+				<TransitionLayout>{children}</TransitionLayout>
 			</body>
 		</html>
 	);
