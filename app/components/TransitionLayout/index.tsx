@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
-import { useRouter } from "next/navigation";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { usePathname } from "next/navigation";
 import "./styles.module.css";
 
 const variants = {
@@ -51,22 +51,22 @@ const variants = {
  * https://letsbuildui.dev/articles/animated-page-transitions-in-nextjs
  */
 const TransitionLayout = ({ children }: { children: React.ReactNode }) => {
-	const { asPath } = useRouter();
+	const pathName = usePathname();
 	const shouldReduceMotion = useReducedMotion();
 
 	return (
 		<div className="effect-3">
-			{/* <AnimatePresence initial={false} mode="wait"> */}
-			<motion.div
-				key={asPath}
-				variants={!shouldReduceMotion ? variants : null}
-				initial="in"
-				animate={["center", "scaleUp"]}
-				exit={["scaleDown", "out"]}
-			>
-				{children}
-			</motion.div>
-			{/* </AnimatePresence> */}
+			<AnimatePresence mode="wait">
+				<motion.div
+					key={pathName}
+					variants={!shouldReduceMotion ? variants : null}
+					initial="in"
+					animate={["center", "scaleUp"]}
+					exit={["scaleDown", "out"]}
+				>
+					{children}
+				</motion.div>
+			</AnimatePresence>
 		</div>
 	);
 };
