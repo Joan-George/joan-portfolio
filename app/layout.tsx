@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
-			<body className={`${robotoSlab.className} bg-green-100 h-screen`}>
+			<body className={`font-lato bg-green-100 h-screen`}>
 				<Navbar />
 				<TransitionLayout>{children}</TransitionLayout>
 			</body>
